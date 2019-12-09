@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+
+{% block title %}お店の一覧{% endblock title %}
+
+{% block content %}
+<h4 class="mt-4 border-bottom">お店一覧</h4>
+<div class='row'>
+    
+
+    
+    
+    <div class ='col-md-9 col-sm-12'>
+        <a class ='btn btn-info text-white lead' href="{% url 'iekari:rest_api' rest_id='A00001' %}">api内容確認用</a>
+
+        {% for rest in rests %}
+        
+            <div class ="card my-3 ">
+            
+                <a class ='card-header bg-warning text-white lead' href="{% url 'iekari:rest_detail' rest_id=rest.id %}">
+                    {{ rest.name }}
+                </a>
+                <div class='col-12 my-3'>
+                    <h3>
+                        {{ rest.score|floatformat:2 }}
+                    </h3>
+                    <p class='card-text'>
+                        <p class = "lead">{{ rest.station }}</p>
+                        {% if rest.genle2 != '0' and rest.genle3 != '0' %}
+                            {{ rest.genle }}, {{ rest.genle2 }}, {{ rest.genle3 }}
+                        {% elif rest.genle2 != '0' %}
+                            {{ rest.genle }}, {{ rest.genle2 }}
+                        {% else %}
+                            {{ rest.genle }}
+                        {% endif %}
+                    </p>
+                    <p class='card-text'>
+                        {% if rest.price_lunch == 0 %}
+                            🌞: (営業時間外)
+                        {% else %}
+                            🌞: {{ rest.price_lunch|sub:1|mul:1000}}~{{rest.price_lunch|mul:1000|sub:1}}円
+                        {% endif %}
+                    </p>
+                    <p class='card-text'>
+                        {% if rest.price_dinner == 0 %}
+                            🌛: (営業時間外)
+                        {% else %}
+                            🌛: {{ rest.price_dinner|sub:1|mul:1000}}~{{rest.price_dinner|mul:1000|sub:1}}円
+                        {% endif %}
+                    </p> 
+                </div>
+            </div>
+        {% endfor %} 
+    </div>     
+
+    
+                     
+    
+</div>
+{% endblock %}
+
+

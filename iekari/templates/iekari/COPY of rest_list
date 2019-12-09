@@ -1,0 +1,36 @@
+    <div class = 'col-md-3 col-sm-12'>
+        <div class = 'card py-3 pl-3'>
+            <div class = 'card-title'>
+                <h6>----最寄り駅----</h4>
+            </div>
+            
+            {% for p in station_list %}    
+                <div class='form-check check1 pb-1'>
+                
+                    <input class = 'form-check-input' type='checkbox' value='{{ p }}' id = "{{ p }}" >
+                    <label class = "form-check-label" for="{{ p }}">
+                        {{p}}
+                    </label>
+                
+                </div>
+            {% endfor %}    
+    
+
+            <div class = 'card-title pt-3'>
+                <h6>----ジャンル----</h4>
+            </div>
+            {% for q in genle_list %}
+                <div class='form-check pb-1'>
+                    <input class = 'form-check-input' type='checkbox' value='{{ q }}' id = "{{ q }}" >
+                    <label class = "form-check-label" for="{{ q }}">
+                        {{ q }}
+                    </label>
+                </div>
+            {% endfor %}
+            <button type="button" class="btn btn-info btn-sm mr-3 mt-4" onclick="location.href=''"　>
+                この条件で検索
+            </button>
+        </div>
+            
+
+    </div>

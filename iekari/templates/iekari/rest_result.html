@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+
+{% block title %}お店の一覧{% endblock title %}
+
+{% block content %}
+<div class='row px-3 py-4' >
+    <form method="post" action="{% url 'iekari:rest_nitaku' qqqq_id=qqqq.id %}">
+        {% csrf_token %}
+        <h4>----------おまけQ-------------</h4>
+        {% if qqqq.question != "0" %}
+            <p class="lead">{{ qqqq.question }}</p>
+        {% endif %}
+
+        <p class="lead">0 : {{ qqqq.blue }}</p>
+        <p class="lead">1 : {{ qqqq.red }}</p>
+
+        {% for i in form.answer %}
+            {{ i }}
+        {% endfor %}<br>
+
+        <button type="submit"class="btn btn-info btn-lg mb-2 mt-3 mx-2" >回答を送信してトップページへ戻る</button>
+    </form>
+    
+
+   
+</div>
+{% endblock %}
+
+
