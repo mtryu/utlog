@@ -184,7 +184,7 @@ def rest_nitaku(request,qqqq_id):
 
 def rest_api(request,rest_id):
     
-    API_Key = '03de712051fadd917905cdd2da9006a4'
+    API_Key = '97bad1368c7685b49e90eb3b091a9464'
     rest = Rest.objects.get(id=rest_id)
     tel = rest.tel
     url = 'https://api.gnavi.co.jp/RestSearchAPI/v3/'
