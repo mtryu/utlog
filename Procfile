@@ -1,1 +1,1 @@
-web: gunicorn sample_app.wsgi --log-file -
+web: gunicorn iekari_proj.wsgi --log-file -
