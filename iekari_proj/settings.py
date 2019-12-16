@@ -36,15 +36,6 @@ STATICFILES_DIRS = (
 )
 
 """ django-herokuの設定 """
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
 
 
 ALLOWED_HOSTS = ['*'] 
@@ -65,13 +56,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
+    
 ]
 
 ROOT_URLCONF = 'iekari_proj.urls'
@@ -151,4 +143,15 @@ USE_TZ = True
 LOGIN_URL='/accounts/login'
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
+
 
