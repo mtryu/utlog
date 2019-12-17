@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -147,15 +147,14 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# try:
-#     from .local_settings import *
-# except ImportError:
-#     pass
+DEBUG = False
 
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
-# if not DEBUG:
-SECRET_KEY = os.environ['SECRET_KEY']
-import django_heroku
-django_heroku.settings(locals())
-
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
 
