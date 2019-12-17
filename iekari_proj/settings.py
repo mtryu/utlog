@@ -94,10 +94,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'iekari_dojo_db', #DB名
         'USER': 'iekari_dojo',
-        'HOST': 'host',
+        'HOST': 'localhost',
         'PASSWORD': 'iekari_dojo_pass', #パスワードがない場合は省略
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -157,5 +159,3 @@ if not DEBUG:
     django_heroku.settings(locals())
 
 
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-DATABASES['default'].update(db_from_env)
