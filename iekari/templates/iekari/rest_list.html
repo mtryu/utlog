@@ -10,7 +10,7 @@
 
     
     
-    <div class ='col-md-9 col-sm-12'>
+    <div class ='col-md-12 col-sm-12'>
         <a class ='btn btn-info text-white lead' href="{% url 'iekari:rest_api' rest_id='A00001' %}">api内容確認用</a>
 
         {% for rest in rests %}
@@ -20,7 +20,7 @@
                 <a class ='card-header bg-warning text-white lead' href="{% url 'iekari:rest_detail' rest_id=rest.id %}">
                     {{ rest.name }}
                 </a>
-                <div class='col-12 my-3'>
+                <div class='col-12 mt-3'>
                     <h3>
                         {{ rest.score|floatformat:2 }}
                     </h3>
