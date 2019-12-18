@@ -150,7 +150,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEBUG = False
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
 
