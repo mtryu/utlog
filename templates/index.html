@@ -16,16 +16,16 @@
     </div>
 </div>
 
-<div class="container-fluid m-2">
-    <div class="row my-3">
-        <div class="container col-lg-4 col-md-12">
+<div class="container container-fluid m-2">
+    <div class="row my-3 ">
+        <div class="container col-lg-4 col-sm-12">
             <div class="row">
                 <div class="entry mx-lg-3 mx-md-2">
                     <div class="title2 font1">UTLOG</div>
                     <p class="tpp">東大生による、東大生のための、東大生の口コミ</p>
-                    <button class="btn sub" onclick="location.href='/accounts/login'">ログイン</button>
+                    <button class="btn sub col-12" onclick="location.href='/accounts/login'">ログイン</button>
                     <p class="detail">ログインすると、UTLOG上でお店の口コミを投稿したり、未登録の飲食店の追加申請ができます。</p>
-                    <button class="btn sub" onclick="location.href='/accounts/register'">会員登録</button>
+                    <button class="btn sub col-12" onclick="location.href='/accounts/register'">会員登録</button>
                     <p class="detail">会員登録はこちらから。東京大学の学生のみ会員登録可能です。※大学のメールアドレス(@g.ecc.u-tokyo.ac.jp)による認証を行います。</p>
 
                 </div>
@@ -33,35 +33,36 @@
         </div>
         <div class="col-lg-8 col-md-12" >
             <div class="row">
-                <a class="category col-md-6 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=1 %}">
+                <a class="category col-lg-6 col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=1 %}">
                     <img src="static/img/curry.png"class="icon">
                     <p class="icon-logo">カレー</p>
                 </a>
-                <a class="category col-md-5  my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=2 %}">
+                <a class="category col-lg-5  col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=2 %}">
                     <img src="static/img/ramen.png" class="icon">
-                    <p class="icon-logo">ラーメン</p>
+                    <p class="icon-logo">ラーメン
+                    </p>
                 </a>
-                <a class="category col-md-5 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=3 %}">
+                <a class="category col-md-5 col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=3 %}">
                     <img src="static/img/teisyoku.png " class="icon">
                     <p class="icon-logo">定食</p>
                 </a>
-                <a class="category col-md-6 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=4 %}">
+                <a class="category col-md-6 col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=4 %}">
                     <img src="static/img/gyouza.png" class="icon">
                     <p class="icon-logo">餃子</p>
                 </a>
-                <a class="category col-md-6 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=5 %}">
+                <a class="category col-md-6  col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=5 %}">
                     <img src="static/img/cafe.png " class="icon">
                     <p class="icon-logo">カフェ</p>
                 </a>
-                <a class="category col-md-5 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=6 %}">
+                <a class="category col-md-5 col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=6 %}">
                     <img src="static/img/china.png" class="icon">
                     <p class="icon-logo">中華全般</p>
                 </a>
-                <a class="category col-md-5 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=7 %}">
+                <a class="category col-md-5 col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=7 %}">
                     <img src="static/img/izakaya.png" class="icon photo">
                     <p class="icon-logo">居酒屋</p>
                 </a>
-                <a class="category col-md-6 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=1 %}">
+                <a class="category col-md-6 col-sm-12 my-2 mx-1 good" href="{% url 'iekari:rest_func' first_id=1 %}">
                     <img src="static/img/italian.png " class="icon">
                     <p class="icon-logo">イタリアン</p>
                 </a>

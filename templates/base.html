@@ -9,12 +9,13 @@
 <html lang = "ja">
     <head>
         <meta charset ="UTF-8">
-        
+        <meta  name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
         
         <title>UTLOG</title>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="{% static 'style.css' %}?123456" >
     </head>
     <body>
@@ -23,17 +24,19 @@
                 <a class="main-logo good text-dark font1" href="/">UTLOG</a>
                 
             </div>
-            <div class="header-right">
-                <div class="menu">
-                
-                    <a href= "/"class="option">HOME</a>
-                    {% if user.is_authenticated %}
-                    <a href="/iekari/mypage">マイページ</a>
-                    <a href="/accounts/logout">ログアウト</a>
-                    {% else %}
-                    <a href="" class="option">会員登録</a>
-                    <a href="" class="option">ログイン</a>
-                    {% endif %}
+            <div class="header-right ">
+                <div class="row">
+                    <div class="menu">
+                    
+                        <a href= "/"class="option">HOME</a>
+                        {% if user.is_authenticated %}
+                        <a href="/iekari/mypage">マイページ</a>
+                        <a href="/accounts/logout">ログアウト</a>
+                        {% else %}
+                        <a href="" class="option">会員登録</a>
+                        <a href="" class="option">ログイン</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
