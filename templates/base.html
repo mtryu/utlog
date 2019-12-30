@@ -1,5 +1,60 @@
 {% load i18n %}
 {% load static from staticfiles %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %} 
+{% load static %}
+{% bootstrap_javascript jquery='full' %}
+<!DOCTYPE html>
+<html lang = "ja">
+    <head>
+        <meta charset ="UTF-8">
+        
+        
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        
+        <title>UTLOG</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'style.css' %}?123456" >
+    </head>
+    <body>
+        <div class="header-top">
+            <div class="header-left">
+                <a class="main-logo good text-dark font1" href="/">UTLOG</a>
+                
+            </div>
+            <div class="header-right">
+                <div class="menu">
+                
+                    <a href= "/"class="option">HOME</a>
+                    {% if user.is_authenticated %}
+                    <a href="/iekari/mypage">マイページ</a>
+                    <a href="/accounts/logout">ログアウト</a>
+                    {% else %}
+                    <a href="" class="option">会員登録</a>
+                    <a href="" class="option">ログイン</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        {% block content %}
+        {{ content }}
+        {% endblock %}
+        
+    </body>
+    <footer>
+        <div class="footer-container col-12">
+            <p class="title3 font1">UTLOG</p>
+            <a class="mail">お問い合わせ</a>
+        </div>
+        
+    </footer>
+</html>
+
+
+{% comment %} {% load i18n %}
+{% load static from staticfiles %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
@@ -110,4 +165,4 @@
 
 </body>
 
-</html>
+</html> {% endcomment %}

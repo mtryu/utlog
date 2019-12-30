@@ -4,24 +4,22 @@
 {% block title %}お店の一覧{% endblock title %}
 
 {% block content %}
-<h4 class="mt-4 border-bottom">お店一覧</h4>
-<div class='row'>
-    
-
-    
-    
-    <div class ='col-md-12 col-sm-12'>
-        <a class ='btn btn-info text-white lead' href="{% url 'iekari:rest_api' rest_id='A00001' %}">api内容確認用</a>
-
+<div class="col-md-12 col-sm-12">
+    <h4 class="mt-4 border-bottom">お店一覧</h4>
+    <div class='row'>
         {% for rest in rests %}
-        
-            <div class ="card my-3 ">
+        <div class ='col-md-6 col-sm-12'>
+            {% comment %} <a class ='btn btn-info text-white lead' href="{% url 'iekari:rest_api' rest_id='A00001' %}">api内容確認用</a> {% endcomment %}
+
             
-                <a class ='card-header bg-warning text-white lead' href="{% url 'iekari:rest_detail' rest_id=rest.id %}">
+            
+            <div class ="card my-3">
+            
+                <a class ='card-header text-dark lead' href="{% url 'iekari:rest_detail' rest_id=rest.id %}">
                     {{ rest.name }}
                 </a>
                 <div class='col-12 mt-3'>
-                    <h3>
+                    <h3 class="font1">
                         {{ rest.score|floatformat:2 }}
                     </h3>
                     <p class='card-text'>
@@ -34,14 +32,14 @@
                             {{ rest.genle }}
                         {% endif %}
                     </p>
-                    <p class='card-text'>
+                    <p class='card-text fon'>
                         {% if rest.price_lunch == 0 %}
                             🌞: (営業時間外)
                         {% else %}
                             🌞: {{ rest.price_lunch|sub:1|mul:1000}}~{{rest.price_lunch|mul:1000|sub:1}}円
                         {% endif %}
                     </p>
-                    <p class='card-text'>
+                    <p class='card-text mb-3'>
                         {% if rest.price_dinner == 0 %}
                             🌛: (営業時間外)
                         {% else %}
@@ -50,11 +48,12 @@
                     </p> 
                 </div>
             </div>
+        </div>  
         {% endfor %} 
-    </div>     
+           
 
-    
-                     
+    </div>
+                        
     
 </div>
 {% endblock %}
